@@ -1,0 +1,93 @@
+<resources>
+    <string name="app_name">Conversores</string>
+
+    <string name="d">DE:</string>
+    <string name="a">A:</string>
+    <string name="cac">Cantidad a Convertir</string>
+    <string name="convertir">CONVERTIR</string>
+    <string name="transferir">TRANSFERIR</string>
+
+
+    <string-array name="spnLongitud">
+        <item>Metros</item>
+        <item>Centimetros</item>
+        <item>Pulgadas</item>
+        <item>Pies</item>
+        <item>Varas</item>
+        <item>Yardas</item>
+        <item>Kilometros</item>
+        <item>Millas</item>
+
+    </string-array>
+
+    <string-array name="spnAlmacenamiento">
+        <item>Bit</item>
+        <item>Byte</item>
+        <item>KiloByte</item>
+        <item>MegaByte</item>
+        <item>GigaByte</item>
+        <item>TeraByte</item>
+        <item>PetaByte</item>
+        <item>ExaByte</item>
+        <item>ZetaByte</item>
+    </string-array>
+
+    <string-array name="spnMonedas">
+        <item>Dolar</item>
+        <item>Euro</item>
+        <item>Quetzal</item>
+        <item>Lempira</item>
+        <item>Cordoba</item>
+        <item>ColonSV</item>
+        <item>ColonCR</item>
+        <item>Yenes</item>
+        <item>Rupias_indias</item>
+    </string-array>
+
+    <string-array name="spnMasa">
+        <item>Libra</item>
+        <item>Kilogramo</item>
+        <item>Gramo</item>
+        <item>Tonelada</item>
+        <item>Miligramo</item>
+        <item>Microgramo</item>
+        <item>Tonelada_larga</item>
+        <item>Tonelada_corta</item>
+        <item>Stone</item>
+        <item>Onza</item>
+    </string-array>
+
+    <string-array name="spnVolumen">
+        <item>Litro</item>
+        <item>Galon_usa</item>
+        <item>Cuarto_usa</item>
+        <item>Pinta_usa</item>
+        <item>Taza_usa</item>
+        <item>Onza_liquida_usa</item>
+        <item>Cucharada_usa</item>
+        <item>Cucharadita_usa</item>
+        <item>Metro_cubico</item>
+        <item>Mililitro</item>
+    </string-array>
+
+    <string-array name="spnTiempo">
+        <item>Segundo</item>
+        <item>Minuto</item>
+        <item>Hora</item>
+        <item>Dia</item>
+        <item>Semana</item>
+        <item>Mes</item>
+        <item>Año</item>
+        <item>Decada</item>
+        <item>Siglo</item>
+        <item>Milisegundo</item>
+    </string-array>
+
+    <string-array name="spnTransfDatos">
+        <item>Gil</item>
+        <item>Nahun</item>
+        <item>Yarit</item>
+        <item>Cindy</item>
+    </string-array>
+
+</resources>

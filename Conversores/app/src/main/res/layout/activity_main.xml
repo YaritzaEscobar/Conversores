@@ -1,0 +1,1090 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_gradient_celeste"
+    tools:context=".MainActivity">
+
+    <!-- TabHost Conversores con un scrollbars -->
+    <TabHost
+        android:id="@+id/tbhConversores"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:background="@color/grayDark"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </HorizontalScrollView>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Tab LONGITUD -->
+                <RelativeLayout
+                    android:id="@+id/tabLongitud"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!-- ConstraintLayout para el fondo -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/backgroundConversor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="364dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="9dp"
+                        android:layout_marginBottom="280dp"
+                        android:background="@drawable/bg_gradient"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent=".90"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.85">
+
+                        <TextView
+                            android:id="@+id/lblLongitudDe"
+                            android:layout_width="45dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:text="@string/d"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.118"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.167" />
+
+                        <TextView
+                            android:id="@+id/lblLongitudA"
+                            android:layout_width="45dp"
+                            android:layout_height="23dp"
+                            android:layout_below="@+id/lblLongitudDe"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:text="@string/a"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.118"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lblLongitudDe"
+                            app:layout_constraintVertical_bias="0.111" />
+
+                        <Spinner
+                            android:id="@+id/spnLongitudDe"
+                            android:layout_width="283dp"
+                            android:layout_height="24dp"
+                            android:layout_below="@+id/lblLongitudDe"
+                            android:entries="@array/spnLongitud"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:scrollbarSize="14sp"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.695"
+                            app:layout_constraintStart_toEndOf="@+id/lblLongitudDe"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.165" />
+
+                        <Spinner
+                            android:id="@+id/spnLongitudA"
+                            android:layout_width="283dp"
+                            android:layout_height="24dp"
+                            android:layout_below="@+id/lblLongitudA"
+                            android:entries="@array/spnLongitud"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:scrollbarSize="14sp"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.695"
+                            app:layout_constraintStart_toEndOf="@+id/lblLongitudA"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.318" />
+
+                        <EditText
+                            android:id="@+id/txtLongitudCantidad"
+                            android:layout_width="357dp"
+                            android:layout_height="59dp"
+                            android:layout_below="@+id/spnLongitudA"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:hint="@string/cac"
+                            android:inputType="number"
+                            android:textColorHint="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/spnLongitudA"
+                            app:layout_constraintVertical_bias="0.504" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Button
+                        android:id="@+id/btnLongitudConvertir"
+                        android:layout_width="237dp"
+                        android:layout_height="65dp"
+                        android:layout_below="@+id/backgroundConversor"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="-220dp"
+                        android:layout_marginEnd="80dp"
+                        android:layout_marginBottom="160dp"
+                        android:backgroundTint="@color/grayDark"
+                        android:text="@string/convertir"
+                        android:textColor="@color/celesteSky" />
+
+                    <ImageView
+                        android:id="@+id/img_long"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/btnLongitudConvertir"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="140dp"
+                        android:layout_marginTop="-128dp"
+                        android:layout_marginEnd="140dp"
+                        android:layout_marginBottom="60dp"
+                        android:src="@drawable/regla" />
+                </RelativeLayout>
+
+                <!-- Tab ALMACENAMIENTO -->
+                <RelativeLayout
+                    android:id="@+id/tabAlmacenamiento"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!-- ConstraintLayout para el fondo -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/backgroundConversor2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="364dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="9dp"
+                        android:layout_marginBottom="280dp"
+                        android:background="@drawable/bg_gradient"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent=".90"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.85">
+
+                        <TextView
+                            android:id="@+id/lblAlmacenamientoDe"
+                            android:layout_width="45dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:text="@string/d"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.118"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.167" />
+
+                        <TextView
+                            android:id="@+id/lblAlmacenamientoA"
+                            android:layout_width="45dp"
+                            android:layout_height="23dp"
+                            android:layout_below="@+id/lblAlmacenamientoDe"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:text="@string/a"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.118"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lblAlmacenamientoDe"
+                            app:layout_constraintVertical_bias="0.111" />
+
+                        <Spinner
+                            android:id="@+id/spnAlmacenamientoDe"
+                            android:layout_width="283dp"
+                            android:layout_height="24dp"
+                            android:layout_below="@+id/lblAlmacenamientoDe"
+                            android:entries="@array/spnAlmacenamiento"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:scrollbarSize="14sp"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.695"
+                            app:layout_constraintStart_toEndOf="@+id/lblAlmacenamientoDe"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.165" />
+
+                        <Spinner
+                            android:id="@+id/spnAlmacenamientoA"
+                            android:layout_width="283dp"
+                            android:layout_height="24dp"
+                            android:layout_below="@+id/lblAlmacenamientoA"
+                            android:entries="@array/spnAlmacenamiento"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:scrollbarSize="14sp"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.695"
+                            app:layout_constraintStart_toEndOf="@+id/lblAlmacenamientoA"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.318" />
+
+                        <EditText
+                            android:id="@+id/txtAlmacenamientoCantidad"
+                            android:layout_width="357dp"
+                            android:layout_height="59dp"
+                            android:layout_below="@+id/spnAlmacenamientoA"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:hint="@string/cac"
+                            android:inputType="number"
+                            android:textColorHint="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/spnAlmacenamientoA"
+                            app:layout_constraintVertical_bias="0.504" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Button
+                        android:id="@+id/btnAlmacenamientoConvertir"
+                        android:layout_width="237dp"
+                        android:layout_height="65dp"
+                        android:layout_below="@+id/backgroundConversor2"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="-220dp"
+                        android:layout_marginEnd="80dp"
+                        android:layout_marginBottom="160dp"
+                        android:backgroundTint="@color/grayDark"
+                        android:text="@string/convertir"
+                        android:textColor="@color/celesteSky" />
+
+                    <ImageView
+                        android:id="@+id/img_almac"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/btnAlmacenamientoConvertir"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="140dp"
+                        android:layout_marginTop="-128dp"
+                        android:layout_marginEnd="140dp"
+                        android:layout_marginBottom="60dp"
+                        android:src="@drawable/dispositivo_de_almacenamiento" />
+                </RelativeLayout>
+
+                <!-- Tab MONEDAS -->
+                <RelativeLayout
+                    android:id="@+id/tabMonedas"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!-- ConstraintLayout para el fondo -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/backgroundConversor3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="364dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="9dp"
+                        android:layout_marginBottom="280dp"
+                        android:background="@drawable/bg_gradient"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent=".90"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.85">
+
+                        <TextView
+                            android:id="@+id/lblMonedasDe"
+                            android:layout_width="45dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:text="@string/d"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.118"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.167" />
+
+                        <TextView
+                            android:id="@+id/lblMonedasA"
+                            android:layout_width="45dp"
+                            android:layout_height="23dp"
+                            android:layout_below="@+id/lblMonedasDe"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:text="@string/a"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.118"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lblMonedasDe"
+                            app:layout_constraintVertical_bias="0.111" />
+
+                        <Spinner
+                            android:id="@+id/spnMonedasDe"
+                            android:layout_width="283dp"
+                            android:layout_height="24dp"
+                            android:layout_below="@+id/lblMonedasDe"
+                            android:entries="@array/spnMonedas"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:scrollbarSize="14sp"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.695"
+                            app:layout_constraintStart_toEndOf="@+id/lblMonedasDe"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.165" />
+
+                        <Spinner
+                            android:id="@+id/spnMonedasA"
+                            android:layout_width="283dp"
+                            android:layout_height="24dp"
+                            android:layout_below="@+id/lblMonedasA"
+                            android:entries="@array/spnMonedas"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:scrollbarSize="14sp"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.695"
+                            app:layout_constraintStart_toEndOf="@+id/lblMonedasA"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.318" />
+
+                        <EditText
+                            android:id="@+id/txtMonedasCantidad"
+                            android:layout_width="357dp"
+                            android:layout_height="59dp"
+                            android:layout_below="@+id/spnMonedasA"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:hint="@string/cac"
+                            android:inputType="number"
+                            android:textColorHint="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/spnMonedasA"
+                            app:layout_constraintVertical_bias="0.504" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Button
+                        android:id="@+id/btnMonedasConvertir"
+                        android:layout_width="237dp"
+                        android:layout_height="65dp"
+                        android:layout_below="@+id/backgroundConversor3"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="-220dp"
+                        android:layout_marginEnd="80dp"
+                        android:layout_marginBottom="160dp"
+                        android:backgroundTint="@color/grayDark"
+                        android:text="@string/convertir"
+                        android:textColor="@color/celesteSky" />
+
+                    <ImageView
+                        android:id="@+id/img_monedas"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/btnMonedasConvertir"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="140dp"
+                        android:layout_marginTop="-128dp"
+                        android:layout_marginEnd="140dp"
+                        android:layout_marginBottom="60dp"
+                        android:src="@drawable/dinero" />
+                </RelativeLayout>
+
+                <!-- Tab MASA -->
+                <RelativeLayout
+                    android:id="@+id/tabMasa"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!-- ConstraintLayout para el fondo -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/backgroundConversor4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="364dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="9dp"
+                        android:layout_marginBottom="280dp"
+                        android:background="@drawable/bg_gradient"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent=".90"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.85">
+
+                        <TextView
+                            android:id="@+id/lblMasaDe"
+                            android:layout_width="45dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:text="@string/d"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.118"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.167" />
+
+                        <TextView
+                            android:id="@+id/lblMasaA"
+                            android:layout_width="45dp"
+                            android:layout_height="23dp"
+                            android:layout_below="@+id/lblMasaDe"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:text="@string/a"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.118"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lblMasaDe"
+                            app:layout_constraintVertical_bias="0.111" />
+
+                        <Spinner
+                            android:id="@+id/spnMasaDe"
+                            android:layout_width="283dp"
+                            android:layout_height="24dp"
+                            android:layout_below="@+id/lblMasaDe"
+                            android:entries="@array/spnMasa"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:scrollbarSize="14sp"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.695"
+                            app:layout_constraintStart_toEndOf="@+id/lblMasaDe"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.165" />
+
+                        <Spinner
+                            android:id="@+id/spnMasaA"
+                            android:layout_width="283dp"
+                            android:layout_height="24dp"
+                            android:layout_below="@+id/lblMasaA"
+                            android:entries="@array/spnMasa"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:scrollbarSize="14sp"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.695"
+                            app:layout_constraintStart_toEndOf="@+id/lblMasaA"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.318" />
+
+                        <EditText
+                            android:id="@+id/txtMasaCantidad"
+                            android:layout_width="357dp"
+                            android:layout_height="59dp"
+                            android:layout_below="@+id/spnMasaA"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:hint="@string/cac"
+                            android:inputType="number"
+                            android:textColorHint="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/spnMasaA"
+                            app:layout_constraintVertical_bias="0.504" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Button
+                        android:id="@+id/btnMasaConvertir"
+                        android:layout_width="237dp"
+                        android:layout_height="65dp"
+                        android:layout_below="@+id/backgroundConversor4"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="-220dp"
+                        android:layout_marginEnd="80dp"
+                        android:layout_marginBottom="160dp"
+                        android:backgroundTint="@color/grayDark"
+                        android:text="@string/convertir"
+                        android:textColor="@color/celesteSky" />
+
+                    <ImageView
+                        android:id="@+id/img_masa"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/btnMasaConvertir"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="140dp"
+                        android:layout_marginTop="-128dp"
+                        android:layout_marginEnd="140dp"
+                        android:layout_marginBottom="60dp"
+                        android:src="@drawable/masa" />
+                </RelativeLayout>
+
+                <!-- Tab VOLUMEN -->
+                <RelativeLayout
+                    android:id="@+id/tabVolumen"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!-- ConstraintLayout para el fondo -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/backgroundConversor5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="364dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="9dp"
+                        android:layout_marginBottom="280dp"
+                        android:background="@drawable/bg_gradient"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent=".90"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.85">
+
+                        <TextView
+                            android:id="@+id/lblVolumenDe"
+                            android:layout_width="45dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:text="@string/d"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.118"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.167" />
+
+                        <TextView
+                            android:id="@+id/lblVolumenA"
+                            android:layout_width="45dp"
+                            android:layout_height="23dp"
+                            android:layout_below="@+id/lblVolumenDe"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:text="@string/a"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.118"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lblVolumenDe"
+                            app:layout_constraintVertical_bias="0.111" />
+
+                        <Spinner
+                            android:id="@+id/spnVolumenDe"
+                            android:layout_width="283dp"
+                            android:layout_height="24dp"
+                            android:layout_below="@+id/lblVolumenDe"
+                            android:entries="@array/spnVolumen"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:scrollbarSize="14sp"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.695"
+                            app:layout_constraintStart_toEndOf="@+id/lblVolumenDe"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.165" />
+
+                        <Spinner
+                            android:id="@+id/spnVolumenA"
+                            android:layout_width="283dp"
+                            android:layout_height="24dp"
+                            android:layout_below="@+id/lblVolumenA"
+                            android:entries="@array/spnVolumen"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:scrollbarSize="14sp"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.695"
+                            app:layout_constraintStart_toEndOf="@+id/lblVolumenA"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.318" />
+
+                        <EditText
+                            android:id="@+id/txtVolumenCantidad"
+                            android:layout_width="357dp"
+                            android:layout_height="59dp"
+                            android:layout_below="@+id/spnVolumenA"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:hint="@string/cac"
+                            android:inputType="number"
+                            android:textColorHint="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/spnVolumenA"
+                            app:layout_constraintVertical_bias="0.504" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Button
+                        android:id="@+id/btnVolumenConvertir"
+                        android:layout_width="237dp"
+                        android:layout_height="65dp"
+                        android:layout_below="@+id/backgroundConversor5"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="-220dp"
+                        android:layout_marginEnd="80dp"
+                        android:layout_marginBottom="160dp"
+                        android:backgroundTint="@color/grayDark"
+                        android:text="@string/convertir"
+                        android:textColor="@color/celesteSky" />
+
+                    <ImageView
+                        android:id="@+id/img_volumen"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/btnVolumenConvertir"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="140dp"
+                        android:layout_marginTop="-128dp"
+                        android:layout_marginEnd="140dp"
+                        android:layout_marginBottom="60dp"
+                        android:src="@drawable/volumen" />
+                </RelativeLayout>
+
+                <!-- Tab TIEMPO -->
+                <RelativeLayout
+                    android:id="@+id/tabTiempo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!-- ConstraintLayout para el fondo -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/backgroundConversor6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="364dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="9dp"
+                        android:layout_marginBottom="280dp"
+                        android:background="@drawable/bg_gradient"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent=".90"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.85">
+
+                        <TextView
+                            android:id="@+id/lblTiempoDe"
+                            android:layout_width="45dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:text="@string/d"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.118"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.167" />
+
+                        <TextView
+                            android:id="@+id/lblTiempoA"
+                            android:layout_width="45dp"
+                            android:layout_height="23dp"
+                            android:layout_below="@+id/lblTiempoDe"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:text="@string/a"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.118"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lblTiempoDe"
+                            app:layout_constraintVertical_bias="0.111" />
+
+                        <Spinner
+                            android:id="@+id/spnTiempoDe"
+                            android:layout_width="283dp"
+                            android:layout_height="24dp"
+                            android:layout_below="@+id/lblTiempoDe"
+                            android:entries="@array/spnTiempo"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:scrollbarSize="14sp"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.695"
+                            app:layout_constraintStart_toEndOf="@+id/lblTiempoDe"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.165" />
+
+                        <Spinner
+                            android:id="@+id/spnTiempoA"
+                            android:layout_width="283dp"
+                            android:layout_height="24dp"
+                            android:layout_below="@+id/lblTiempoA"
+                            android:entries="@array/spnTiempo"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:scrollbarSize="14sp"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.695"
+                            app:layout_constraintStart_toEndOf="@+id/lblTiempoA"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.318" />
+
+                        <EditText
+                            android:id="@+id/txtTiempoCantidad"
+                            android:layout_width="357dp"
+                            android:layout_height="59dp"
+                            android:layout_below="@+id/spnTiempoA"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:hint="@string/cac"
+                            android:inputType="number"
+                            android:textColorHint="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/spnTiempoA"
+                            app:layout_constraintVertical_bias="0.504" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Button
+                        android:id="@+id/btnTiempoConvertir"
+                        android:layout_width="237dp"
+                        android:layout_height="65dp"
+                        android:layout_below="@+id/backgroundConversor6"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="-220dp"
+                        android:layout_marginEnd="80dp"
+                        android:layout_marginBottom="160dp"
+                        android:backgroundTint="@color/grayDark"
+                        android:text="@string/convertir"
+                        android:textColor="@color/celesteSky" />
+
+                    <ImageView
+                        android:id="@+id/img_tiempo"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/btnTiempoConvertir"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="140dp"
+                        android:layout_marginTop="-128dp"
+                        android:layout_marginEnd="140dp"
+                        android:layout_marginBottom="60dp"
+                        android:src="@drawable/tiempo_rapido" />
+                </RelativeLayout>
+
+                <!-- Tab TRANSFERENCIA DE DATOS -->
+                <RelativeLayout
+                    android:id="@+id/tabTransfDatos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!-- ConstraintLayout para el fondo -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/backgroundConversor7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="364dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="9dp"
+                        android:layout_marginBottom="280dp"
+                        android:background="@drawable/bg_gradient"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_percent=".90"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.85">
+
+                        <TextView
+                            android:id="@+id/lblTransfDatosDe"
+                            android:layout_width="45dp"
+                            android:layout_height="23dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:text="@string/d"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.118"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.167" />
+
+                        <TextView
+                            android:id="@+id/lblTransfDatosA"
+                            android:layout_width="45dp"
+                            android:layout_height="23dp"
+                            android:layout_below="@+id/lblTransfDatosDe"
+                            android:layout_alignParentBottom="true"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:text="@string/a"
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.118"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/lblTransfDatosDe"
+                            app:layout_constraintVertical_bias="0.111" />
+
+                        <Spinner
+                            android:id="@+id/spnTransfDatosDe"
+                            android:layout_width="283dp"
+                            android:layout_height="24dp"
+                            android:layout_below="@+id/lblTransfDatosDe"
+                            android:entries="@array/spnTransfDatos"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:scrollbarSize="14sp"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.695"
+                            app:layout_constraintStart_toEndOf="@+id/lblTransfDatosDe"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.165" />
+
+                        <Spinner
+                            android:id="@+id/spnTransfDatosA"
+                            android:layout_width="283dp"
+                            android:layout_height="24dp"
+                            android:layout_below="@+id/lblTransfDatosA"
+                            android:entries="@array/spnTransfDatos"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:scrollbarSize="14sp"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.695"
+                            app:layout_constraintStart_toEndOf="@+id/lblTransfDatosA"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.318" />
+
+                        <EditText
+                            android:id="@+id/txtTransfDatosCantidad"
+                            android:layout_width="357dp"
+                            android:layout_height="59dp"
+                            android:layout_below="@+id/spnTransfDatosA"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/neueremansans_regular"
+                            android:hint="@string/cac"
+                            android:inputType="number"
+                            android:textColorHint="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/spnTransfDatosA"
+                            app:layout_constraintVertical_bias="0.504" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Button
+                        android:id="@+id/btnTransfDatosConvertir"
+                        android:layout_width="237dp"
+                        android:layout_height="65dp"
+                        android:layout_below="@+id/backgroundConversor7"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="-220dp"
+                        android:layout_marginEnd="80dp"
+                        android:layout_marginBottom="160dp"
+                        android:backgroundTint="@color/grayDark"
+                        android:text="@string/transferir"
+                        android:textColor="@color/celesteSky" />
+
+                    <ImageView
+                        android:id="@+id/img_transfdatos"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/btnTransfDatosConvertir"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="140dp"
+                        android:layout_marginTop="-128dp"
+                        android:layout_marginEnd="140dp"
+                        android:layout_marginBottom="60dp"
+                        android:src="@drawable/transferencia_datos" />
+                </RelativeLayout>
+
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</RelativeLayout>
